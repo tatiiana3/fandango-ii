@@ -22,7 +22,7 @@ You should try to guide them by using the case studies above as launch off point
 
 ### Sample Diagram of Web Application Layers
 
-![Sample Diagram of Web Application Layers ](./assets/WebAppLayers.png)
+![Sample Diagram of Web Application Layers ](./WebAppLayers.png)
 
 The candidates should be encouraged to discuss why this is not scalable.
 A node process can only do some much on its own. They should be able to discuss how a load balancer or cache would fit into Fandango here.
@@ -37,7 +37,7 @@ They should also discuss some possible issues that may pop up using this type of
 
 What if we were storing our sessions in the node process? A possible solution is something called "sticky sessions" where we configure our Load Balancer to send user session to the same machine that the request is being sent to.
 
-![Sample Diagram of Web Application Layers with Load Balancing](./assets/WebAppLayersLB.png)
+![Sample Diagram of Web Application Layers with Load Balancing](./WebAppLayersLB.png)
 
 ### Case Study 2: We have a feature which shows the most popular new releases but the query is really slow
 
@@ -45,7 +45,7 @@ The goal for this case study is to try to get them to think about caching. Cachi
 
 Lead them to thinking about a cache. Specifically you want them to talk about a cache with the Least Frequently Used eviction policy. The idea here is that we can keep track of new releases and their ticket sales. The ones with the ticket least ticket sales get bumped off the cache in favor of the ones with higher ticket sales.
 
-![Sample Diagram of Web Application Layers with Caching](./assets/WebAppLayersCache.png)
+![Sample Diagram of Web Application Layers with Caching](./WebAppLayersCache.png)
 
 ### Case Study 3: Our application is a monolith. If we make changes to a specific part of our application, we need to redeploy the entire thing
 
@@ -63,24 +63,24 @@ An important discussion to have is how do these services communicate with each o
 - Keep the reservation on a cache for about 5 minutes
 - Could update Booking table in DB with expiry time and status would be set to “On Hold”
 - If 5 minutes passes, the hold is released
-    - Notify current user
-    - Send update to Seat Waiting Service
+  - Notify current user
+  - Send update to Seat Waiting Service
 - If seats are purchased, update status in DB to “Booked”
-    - Send update to Seat Waiting Service
+  - Send update to Seat Waiting Service
 
 ### Sample Active Reservation Service
 
 - Queue of waiting users for seats
-    - First come; first serve
-    - Users can add themselves to queue of waiting list on a possible seat or the booking in general
+  - First come; first serve
+  - Users can add themselves to queue of waiting list on a possible seat or the booking in general
 - Relating back to Active Reservation Service:
-    - If timer for Active Reservation Service runs out, the person first on queue will be notified
-    - If seat (or entire booking) is booked, notify everyone on the queue
+  - If timer for Active Reservation Service runs out, the person first on queue will be notified
+  - If seat (or entire booking) is booked, notify everyone on the queue
 
 ## Sample Activity Diagram
 
-![Microservice Activity Diagram](./assets/MicroservicesActivityDiagram.png)
+![Microservice Activity Diagram](./MicroservicesActivityDiagram.png)
 
 ## Sample Data Flow Diagram
 
-The reason that the microservices don't have their own databases is that they depend on the same data. 
+The reason that the microservices don't have their own databases is that they depend on the same data.
