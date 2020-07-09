@@ -22,7 +22,7 @@ You should try to guide them by using the case studies above as launch off point
 
 ### Sample Diagram of Web Application Layers
 
-![Sample Diagram of Web Application Layers ](./WebAppLayers.png)
+![Sample Diagram of Web Application Layers ](./images/WebAppLayers.png)
 
 The candidates should be encouraged to discuss why this is not scalable.
 A node process can only do some much on its own. They should be able to discuss how a load balancer or cache would fit into Fandango here.
@@ -37,7 +37,7 @@ They should also discuss some possible issues that may pop up using this type of
 
 What if we were storing our sessions in the node process? A possible solution is something called "sticky sessions" where we configure our Load Balancer to send user session to the same machine that the request is being sent to.
 
-![Sample Diagram of Web Application Layers with Load Balancing](./WebAppLayersLB.png)
+![Sample Diagram of Web Application Layers with Load Balancing](./images/WebAppLayersLB.png)
 
 ### Case Study 2: We have a feature which shows the most popular new releases but the query is really slow
 
@@ -45,7 +45,7 @@ The goal for this case study is to try to get them to think about caching. Cachi
 
 Lead them to thinking about a cache. Specifically you want them to talk about a cache with the Least Frequently Used eviction policy. The idea here is that we can keep track of new releases and their ticket sales. The ones with the ticket least ticket sales get bumped off the cache in favor of the ones with higher ticket sales.
 
-![Sample Diagram of Web Application Layers with Caching](./WebAppLayersCache.png)
+![Sample Diagram of Web Application Layers with Caching](./images/WebAppLayersCache.png)
 
 ### Case Study 3: Our application is a monolith. If we make changes to a specific part of our application, we need to redeploy the entire thing
 
@@ -79,8 +79,10 @@ An important discussion to have is how do these services communicate with each o
 
 ## Sample Activity Diagram
 
-![Microservice Activity Diagram](./MicroservicesActivityDiagram.png)
+![Microservice Activity Diagram](./images/MicroservicesActivityDiagram.png)
 
 ## Sample Data Flow Diagram
 
 The reason that the microservices don't have their own databases is that they depend on the same data.
+
+![Microservice Activity Diagram](./images/Microservices.png)
