@@ -22,7 +22,7 @@ You should try to guide them by using the case studies above as launch off point
 
 ### Sample Diagram of Web Application Layers
 
-![Sample Diagram of Web Application Layers ](./assets/WebAppLayers.png)
+![Sample Diagram of Web Application Layers ](WebAppLayers.png)
 
 The candidates should be encouraged to discuss why this is not scalable.
 A node process can only do some much on its own. They should be able to discuss how a load balancer or cache would fit into Fandango here.
