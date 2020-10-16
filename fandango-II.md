@@ -78,4 +78,4 @@ An important discussion to have is how do these services communicate with each o
 
 The reason that the microservices don't have their own databases is that they depend on the same data.
 
-![Microservice Activity Diagram](./images/Microservices.png)
+![Microservice Activity Diagram](./images/MicroservicesActivityDiagram.png)
