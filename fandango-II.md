@@ -35,15 +35,11 @@ A loader balancer shares the love of traffic/requests across a cluster of server
 
 They should also discuss some possible issues that may pop up using this type of architecture.
 
-What if we were storing our sessions in the node process? A possible solution is something called "sticky sessions" where we configure our Load Balancer to send user session to the same machine that the request is being sent to.
-
 ![Sample Diagram of Web Application Layers with Load Balancing](./images/WebAppLayersLB.png)
 
 ### Case Study 2: We have a feature which shows the most popular new releases but the query is really slow
 
-The goal for this case study is to try to get them to think about caching. Caching comes in many different forms. They might say, they can cache the query itself in some sort of object on the server. This is a completely viable solution. However, the data might become stale.
-
-Lead them to thinking about a cache. Specifically you want them to talk about a cache with the Least Frequently Used eviction policy. The idea here is that we can keep track of new releases and their ticket sales. The ones with the ticket least ticket sales get bumped off the cache in favor of the ones with higher ticket sales.
+The goal for this case study is to try to get them to think about caching. Lead them to thinking about a cache. Specifically you want them to talk about a cache with the Least Frequently Used eviction policy. The idea here is that we can keep track of new releases and their ticket sales. The ones with the ticket least ticket sales get bumped off the cache in favor of the ones with higher ticket sales.
 
 ![Sample Diagram of Web Application Layers with Caching](./images/WebAppLayersCache.png)
 
@@ -53,7 +49,7 @@ The solution to this would be microservices. Microservices are their own environ
 
 The Booking Service would be a good candidate to split into microservices. In addition, they should be able to note how the services would work individually as well as how they would interact with each other. Expectation:
 
-- Activity Diagram or Step By Step Process
+- Step By Step Process
 - Data flow without the items in the previous case studies
 
 An important discussion to have is how do these services communicate with each other? There are many ways in which we know such as our typical REST API but we can also use pub/sub design pattern. Since, the latter is out of scope, it can be ignored. The short answer is that the pub/sub pattern is a generalization of something we have used way back when: `addEventListener`
@@ -77,9 +73,6 @@ An important discussion to have is how do these services communicate with each o
   - If timer for Active Reservation Service runs out, the person first on queue will be notified
   - If seat (or entire booking) is booked, notify everyone on the queue
 
-## Sample Activity Diagram
-
-![Microservice Activity Diagram](./images/MicroservicesActivityDiagram.png)
 
 ## Sample Data Flow Diagram
 
