@@ -50,6 +50,7 @@ The solution to this would be microservices. Microservices are their own environ
 The Booking Service would be a good candidate to split into microservices. In addition, they should be able to note how the services would work individually as well as how they would interact with each other. Expectation:
 
 - Step By Step Process
+- Activity flow diagram
 - Data flow without the items in the previous case studies
 
 An important discussion to have is how do these services communicate with each other? There are many ways in which we know such as our typical REST API but we can also use pub/sub design pattern. Since, the latter is out of scope, it can be ignored. The short answer is that the pub/sub pattern is a generalization of something we have used way back when: `addEventListener`
@@ -70,7 +71,7 @@ An important discussion to have is how do these services communicate with each o
   - If seat (or entire booking) is booked, notify everyone on the queue
 
 
-## Sample Data Flow Diagram
+## Sample Activity Flow Diagram
 
 
 ![Microservice Activity Diagram](./images/MicroservicesActivityDiagram.png)
